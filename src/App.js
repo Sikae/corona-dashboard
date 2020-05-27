@@ -65,6 +65,7 @@ class App extends React.Component {
         const { data, country } = this.state;
         return (
             <Router>
+                <Route exact path={'/'} render={() => (<Redirect to='/countries/Ecuador' />)}/>
                 <Route path={`/countries/:country`} render= {({match}) => <Home data={data} country={match.params.country} 
                 handleCountryChange={this.handleCountryChange}/>}/>
                 <Route exact path={'/favorites'} component={Favorites} />
