@@ -33,6 +33,7 @@ let location = useLocation()
 return (
     <div className={styles.container}>
     <Typography variant="h2" gutterBottom> COVID-19 State</Typography>
+    <Typography variant="h4" gutterBottom> Global</Typography>
     <LineChart data={data} country={country}></LineChart>
     <Cards data={data}/>
     <CountryPicker handleCountryChange={handleCountryPicked}/>
