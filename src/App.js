@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, useLocation, Redirect, useHistory} from 'react-router-dom';
 
-import { Cards, Chart, CountryPicker, Favorites } from './components';
+import { Cards, Chart, CountryPicker, Favorites, LineChart } from './components';
 import { Typography } from '@material-ui/core';
 import styles from './App.module.css';
 import { fetchData } from './api';
@@ -33,6 +33,7 @@ let location = useLocation()
 return (
     <div className={styles.container}>
     <Typography variant="h2" gutterBottom> COVID-19 State</Typography>
+    <LineChart data={data} country={country}></LineChart>
     <Cards data={data}/>
     <CountryPicker handleCountryChange={handleCountryPicked}/>
     <Chart data={data} country={country}/>
